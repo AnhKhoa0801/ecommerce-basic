@@ -1,9 +1,10 @@
+import MainLayout from "components/layout/MainLayout";
 import React from "react";
 
 const ProductDetail = ({ productId }) => {
   return <div> ProductDetail: {productId}</div>;
 };
-
+ProductDetail.Layout = MainLayout;
 export default ProductDetail;
 
 export async function getStaticProps(context) {
