@@ -83,7 +83,7 @@ export async function getStaticPaths() {
     paths: products.map((item) => ({
       params: { productId: String(item.id) },
     })),
-    fallback: true,
+    fallback: false,
     // fallback: 'blocking', will block page when server run static props
   };
 }
