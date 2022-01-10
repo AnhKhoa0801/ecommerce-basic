@@ -1,18 +1,12 @@
-import { Fragment, useState } from "react";
-import { Dialog, Popover, Tab, Transition } from "@headlessui/react";
-import {
-  MenuIcon,
-  SearchIcon,
-  ShoppingBagIcon,
-  XIcon,
-} from "@heroicons/react/outline";
+import { ShoppingBagIcon } from "@heroicons/react/outline";
 import Image from "next/image";
-import workflow from "public/workflow.svg";
 import Link from "next/link";
+import workflow from "public/workflow.svg";
+import { useSelector } from "react-redux";
+import { cartSelector } from "redux/cartSlice";
 
 export default function Example() {
-  const [open, setOpen] = useState(false);
-
+  const qty = useSelector(cartSelector).cart?.length;
   return (
     <>
       <header className="flex my-3 gap-3 items-center">
@@ -48,7 +42,7 @@ export default function Example() {
                   aria-hidden="true"
                 />
                 <span className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">
-                  0
+                  {qty}
                 </span>
               </a>
             </Link>

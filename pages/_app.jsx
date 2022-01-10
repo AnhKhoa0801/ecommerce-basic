@@ -1,14 +1,17 @@
 import EmptyLayout from "components/layout/EmptyLayout";
+import { Provider } from "react-redux";
+import store from "redux/store";
 import "styles/globals.scss";
-import { Head } from "next/head";
 
 function MyApp({ Component, pageProps }) {
   const Layout = Component.Layout ?? EmptyLayout;
 
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <Provider store={store}>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </Provider>
   );
 }
 

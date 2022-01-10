@@ -1,4 +1,5 @@
 import MainLayout from "components/layout/MainLayout";
+import { getListProduct } from "dataService/productService";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -37,46 +38,8 @@ function product({ products }) {
 product.Layout = MainLayout;
 export default product;
 
-export async function getStaticProps() {
-  const products = [
-    {
-      id: 1,
-      name: "Earthen Bottle",
-      href: "#",
-      price: "$48",
-      imageSrc: "/assets/category-page-04-image-card-01.jpg",
-      imageAlt:
-        "Tall slender porcelain bottle with natural clay textured body and cork stopper.",
-    },
-    {
-      id: 2,
-      name: "Nomad Tumbler",
-      href: "#",
-      price: "$35",
-      imageSrc: "/assets/category-page-04-image-card-02.jpg",
-      imageAlt:
-        "Olive drab green insulated bottle with flared screw lid and flat top.",
-    },
-    {
-      id: 3,
-      name: "Focus Paper Refill",
-      href: "#",
-      price: "$89",
-      imageSrc: "/assets/category-page-04-image-card-03.jpg",
-      imageAlt:
-        "Person using a pen to cross a task off a productivity paper card.",
-    },
-    {
-      id: 4,
-      name: "Machined Mechanical Pencil",
-      href: "#",
-      price: "$35",
-      imageSrc: "/assets/category-page-04-image-card-04.jpg",
-      imageAlt:
-        "Hand holding black machined steel mechanical pencil with brass tip and top.",
-    },
-    // More products...
-  ];
+export async function getServerSideProps() {
+  const products = getListProduct();
   return {
     props: {
       products,
