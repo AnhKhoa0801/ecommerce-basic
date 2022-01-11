@@ -6,7 +6,11 @@ import { useSelector } from "react-redux";
 import { cartSelector } from "redux/cartSlice";
 
 export default function Example() {
-  const qty = useSelector(cartSelector).cart?.length;
+  const cartItems = useSelector(cartSelector).cart;
+  let qty = 0;
+  cartItems.forEach((element) => {
+    qty += element.qty;
+  });
   return (
     <>
       <header className="flex my-3 gap-3 items-center">

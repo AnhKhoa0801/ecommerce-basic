@@ -1,6 +1,10 @@
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import MainLayout from "components/layout/MainLayout";
+import Price from "components/Price";
 import { getListProduct, getProductById } from "dataService/productService";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { useDispatch } from "react-redux";
 import { cartActions } from "redux/cartSlice";
@@ -9,7 +13,7 @@ const ProductDetail = ({ productDetail }) => {
   const dispatch = useDispatch();
 
   const handleAddToCart = () => {
-    dispatch(cartActions.addToCart({ productId: productDetail.id, qty: 1 }));
+    dispatch(cartActions.addToCart({ product: productDetail, qty: 1 }));
   };
 
   return (
@@ -37,8 +41,13 @@ const ProductDetail = ({ productDetail }) => {
           {/* Options */}
           <div className="mt-4 lg:mt-0 lg:row-span-3">
             <h2 className="sr-only">Product information</h2>
-            <p className="text-3xl text-gray-900">{productDetail.price}</p>
-
+            <p className="text-3xl text-gray-900">
+              <Price
+                currency="$"
+                num={productDetail.price}
+                numSize="text-1xl"
+              />
+            </p>
             <button
               type="button"
               className="mt-10 w-full bg-indigo-600 border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
@@ -46,6 +55,12 @@ const ProductDetail = ({ productDetail }) => {
             >
               Add to cart
             </button>
+            <Link href="/product">
+              <a className="mt-6">
+                Back
+                <FontAwesomeIcon icon={faArrowLeft} className="w-4 ml-2" />
+              </a>
+            </Link>
           </div>
 
           <div className="py-10 lg:pt-6 lg:pb-16 lg:col-start-1 lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">

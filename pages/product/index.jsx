@@ -1,4 +1,5 @@
 import MainLayout from "components/layout/MainLayout";
+import Price from "components/Price";
 import { getListProduct } from "dataService/productService";
 import Image from "next/image";
 import Link from "next/link";
@@ -25,7 +26,7 @@ function product({ products }) {
                 </div>
                 <h3 className="mt-4 text-sm text-gray-700">{product.name}</h3>
                 <p className="mt-1 text-lg font-medium text-gray-900">
-                  {product.price}
+                  <Price currency="$" num={product.price} numSize="text-1xl" />
                 </p>
               </a>
             </Link>
