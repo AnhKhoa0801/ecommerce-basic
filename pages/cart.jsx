@@ -17,11 +17,12 @@ const cart = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    let totalPrice = 0;
+    let total = 0;
     cartItems.forEach((item) => {
-      totalPrice += item.product.price * item.qty;
+      total += item.product.price * item.qty;
     });
-    setSubtotal(totalPrice);
+    dispatch(cartActions.updateTotal({ total }));
+    setSubtotal(total);
   }, [cartItems]);
 
   return (

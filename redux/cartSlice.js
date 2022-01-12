@@ -16,6 +16,7 @@ const initialState = () => {
   return {
     userId: uuidv4(),
     cart: [],
+    total: 0,
   };
 };
 
@@ -49,6 +50,10 @@ export const cartSlice = createSlice({
         (item) => item.product.id === action.payload.product.id
       );
       state.cart[idx].qty = action.payload.qty;
+    },
+
+    updateTotal(state, action) {
+      state.total = action.payload.total;
     },
   },
 });

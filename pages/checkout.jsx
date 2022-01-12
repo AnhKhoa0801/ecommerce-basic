@@ -1,16 +1,38 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { cartSelector } from "redux/cartSlice";
 import Price from "components/Price";
+import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { useRouter } from "next/router";
 
 const checkout = () => {
+  const router = useRouter();
   const cartItems = useSelector(cartSelector).cart;
+  const totalPrice = useSelector(cartSelector).total;
 
-  let totalPrice = 0;
-  cartItems.forEach((item) => {
-    totalPrice += item.product.price * item.qty;
-  });
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [address, setAddress] = useState("");
+
+  console.log(name, email, address);
+
+  const handlePayment = (e) => {
+    e.preventDefault();
+    fetch("http://localhost:3000/api/order", {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+      body: JSON.stringify({ name, email, address }),
+    }).then(function (res) {
+      console.log(res);
+    });
+    router.push("/thankyou");
+  };
 
   return (
     <div className="h-screen grid grid-cols-3">
@@ -68,7 +90,11 @@ const checkout = () => {
                     name="name"
                     className="focus:outline-none px-3"
                     placeholder="Try Odinsson"
-                    required=""
+                    required={true}
+                    value={name}
+                    onChange={(e) => {
+                      setName(e.target.value);
+                    }}
                   />
                 </label>
                 <label className="flex border-b border-gray-200 h-12 py-3 items-center">
@@ -78,7 +104,11 @@ const checkout = () => {
                     type="email"
                     className="focus:outline-none px-3"
                     placeholder="try@example.com"
-                    required=""
+                    required={true}
+                    value={email}
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                    }}
                   />
                 </label>
                 <label className="flex border-b border-gray-200 h-12 py-3 items-center">
@@ -87,6 +117,10 @@ const checkout = () => {
                     name="address"
                     className="focus:outline-none px-3"
                     placeholder="10 Street XYZ 654"
+                    value={address}
+                    onChange={(e) => {
+                      setAddress(e.target.value);
+                    }}
                   />
                 </label>
               </fieldset>
@@ -94,7 +128,10 @@ const checkout = () => {
           </form>
         </div>
 
-        <button className="submit-button px-4 py-3 rounded-full bg-indigo-600 text-white focus:ring focus:outline-none w-full text-xl font-semibold transition-colors">
+        <button
+          onClick={handlePayment}
+          className="submit-button px-4 py-3 rounded-full bg-indigo-600 text-white focus:ring focus:outline-none w-full text-xl font-semibold transition-colors"
+        >
           Pay <Price currency="$" num={totalPrice} numSize="text-lg" />
         </button>
       </div>
@@ -162,6 +199,14 @@ const checkout = () => {
           <span>
             <Price currency="$" num={totalPrice} numSize="text-lg" />
           </span>
+        </div>
+        <div className="font-semibold text-1xl px-8 flex justify-between py-8 text-gray-600">
+          <Link href="/cart">
+            <a>
+              <span>Back to cart</span>
+              <FontAwesomeIcon icon={faArrowLeft} className="w-4 ml-2" />
+            </a>
+          </Link>
         </div>
       </div>
     </div>
