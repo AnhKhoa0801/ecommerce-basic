@@ -1,38 +1,61 @@
 [
-    {
-        "id": 1,
-        "name": "Earthen Bottle",
-        "href": "#",
-        "price": 48,
-        "imageSrc": "/assets/category-page-04-image-card-01.jpg",
-        "imageAlt": "Tall slender porcelain bottle with natural clay textured body and cork stopper.",
-        "description": "Tall slender porcelain bottle with natural clay textured body and cork stopper."
-    },
-    {
-        "id": 2,
-        "name": "Nomad Tumbler",
-        "href": "#",
-        "price": 35,
-        "imageSrc": "/assets/category-page-04-image-card-02.jpg",
-        "imageAlt": "Olive drab green insulated bottle with flared screw lid and flat top.",
-        "description": "Olive drab green insulated bottle with flared screw lid and flat top."
-    },
-    {
-        "id": 3,
-        "name": "Focus Paper Refill",
-        "href": "#",
-        "price": 89,
-        "imageSrc": "/assets/category-page-04-image-card-03.jpg",
-        "imageAlt": "Person using a pen to cross a task off a productivity paper card.",
-        "description": "Person using a pen to cross a task off a productivity paper card."
-    },
-    {
-        "id": 4,
-        "name": "Machined Mechanical Pencil",
-        "href": "#",
-        "price": 35,
-        "imageSrc": "/assets/category-page-04-image-card-04.jpg",
-        "imageAlt": "Hand holding black machined steel mechanical pencil with brass tip and top.",
-        "description": "Hand holding black machined steel mechanical pencil with brass tip and top."
-    }
+  {
+    "id": 1,
+    "name": "Aquanamel® Gloss",
+    "price": 99,
+    "imageSrc": "/assets/dulux-aquanamel-gloss.png",
+    "imageAlt": "dulux-aquanamel-gloss",
+    "description": "Dulux Aquanamel® Gloss is a non-yellowing, water-based interior and exterior acrylic enamel that dries to a glossy and durable, chip-resistant finish. Aquanamel® Gloss can be used in most areas were traditional oil-based enamels are applied with the time-saving benefits of an acrylic paint. Aquanamel® Gloss is highly recommended for doors, architraves, skirting boards, internal and external windows, timber trim and walls and is ideal for bathrooms, kitchens and laundries."
+  },
+  {
+    "id": 2,
+    "name": "Super Enamel™ High Gloss",
+    "price": 35,
+    "imageSrc": "/assets/dulux-superenamel-highgloss.png",
+    "imageAlt": "dulux-superenamel-highgloss",
+    "description": "Dulux Super Enamel™ High Gloss is a high quality and hard-wearing oil-based enamel. With superior flow and levelling, Dulux Super Enamel™ High Gloss helps achieve a premium smooth finish for doors, walls and trim in your bedrooms, living room, halls, dining room, bathroom, laundry and kitchen."
+  },
+  {
+    "id": 3,
+    "name": "Texture Medium Cover™",
+    "price": 89,
+    "imageSrc": "/assets/dulux-texture-mediumcover.png",
+    "imageAlt": "dulux-texture-mediumcover",
+    "description": "Dulux Texture Medium Cover™ is ideal for creating a coloured, mottled appearance over brickwork. It is perfect for diffusing, but not completely hiding the brick pattern. It can also be used to create a textured effect over smooth masonry surfaces. A range of effects can be easily achieved by finishing Texture Medium Cover™ with a lambswool hand mitt applicator, sponge, brush or broom."
+  },
+  {
+    "id": 4,
+    "name": "Wash&Wear® Low Sheen",
+    "price": 35,
+    "imageSrc": "/assets/dulux-wash_wear-lowsheen.png",
+    "imageAlt": "dulux-wash_wear-lowsheen",
+    "description": "Dulux Wash&Wear® Low Sheen is ideal for all interior walls including high traffic areas such as hallways and family rooms and where minimal light reflection is desired. Wash&Wear® 101 Barrier Technology® creates a hard-wearing finish that allows you to wipe away most common marks, scuffs and stains with a wet cloth so your walls will look freshly painted for years."
+  },
+  {
+    "id": 5,
+    "name": "Wash&Wear® Matt",
+    "href": "#",
+    "price": 35,
+    "imageSrc": "/assets/Dulux-Wash_Wear-Matt.png",
+    "imageAlt": "Dulux-Wash_Wear-Matt",
+    "description": "Dulux Wash&Wear® Matt provides a stylish, matt finish without compromising on washability or durability. By minimising light reflection, the sophisticated matt finish provides a subtle sheen, hides surface imperfections and softens the effect of glare making it ideal for rooms with large windows or in hallways. It's made with the latest 101 Barrier Technology®, so you can wipe away most common marks, scuffs and stains with a wet cloth and your walls will look freshly painted for years."
+  },
+  {
+    "id": 6,
+    "name": "Wash&Wear® Semi Gloss",
+    "href": "#",
+    "price": 35,
+    "imageSrc": "/assets/dulux-wash_wear-semigloss.png",
+    "imageAlt": "dulux-wash_wear-semigloss",
+    "description": "Dulux Wash&Wear® Semi Gloss provides a mid-level sheen that works well on all walls including frequently cleaned areas and wet areas or as an alternative to enamels on doors and skirting boards. The hard-wearing finish allows you to wipe away most common marks, scuffs and stains with a wet cloth so your walls will look freshly painted for years."
+  },
+  {
+    "id": 7,
+    "name": "Weathershield® Matt",
+    "href": "#",
+    "price": 35,
+    "imageSrc": "/assets/dulux-weathershield-matt.png",
+    "imageAlt": "dulux-weathershield-matt",
+    "description": "Dulux Weathershield® has been specially designed to provide a tough, hard-wearing finish that provides protection from all weather conditions. Formulated with MaxiFlex® Technology to expand and contract with the surface, Dulux guarantees Weathershield® won't peel, flake or blister for as long as you live in your home."
+  }
 ]

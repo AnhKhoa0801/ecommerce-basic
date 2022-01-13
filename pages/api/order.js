@@ -5,9 +5,9 @@ export default function handler(req, res) {
   if (req.method !== "POST") {
     res.status(404).json({ message: "not support method" });
   }
+
   try {
     const order = req.body;
-    console.log("order");
     saveOrder(order);
     res.status(200).json("order success!");
   } catch (error) {

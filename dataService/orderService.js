@@ -6,7 +6,15 @@ export const saveOrder = (order) => {
     orders.push(order);
     ordersJson = JSON.stringify(orders, null, 4); // pretty
     fs.writeFileSync("./dataService/order.json", ordersJson, "utf-8");
-    console.log("success");
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const getOrders = () => {
+  try {
+    const data = require("./order.json");
+    return data;
   } catch (error) {
     console.log(error);
   }

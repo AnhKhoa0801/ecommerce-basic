@@ -55,6 +55,11 @@ export const cartSlice = createSlice({
     updateTotal(state, action) {
       state.total = action.payload.total;
     },
+
+    resetCart(state) {
+      const { userId, cart, qty } = initialState();
+      Object.assign(state, { userId, cart, qty });
+    },
   },
 });
 

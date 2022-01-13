@@ -54,7 +54,7 @@ const cart = () => {
                       width={64}
                       className={`hidden sm:inline-flex`}
                     />
-                    <Link passHref href={`/products/${item.product.id}`}>
+                    <Link passHref href={`/product/${item.product.id}`}>
                       <a className="pt-1 hover:text-palette-dark">
                         {item.product.name}
                       </a>
