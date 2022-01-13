@@ -4,7 +4,7 @@ import Price from "components/Price";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { cartActions, cartSelector } from "redux/cartSlice";
 

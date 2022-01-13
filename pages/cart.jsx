@@ -1,7 +1,7 @@
 import {
   faArrowLeft,
   faArrowRight,
-  faTimes,
+  faTimes
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Price from "components/Price";
