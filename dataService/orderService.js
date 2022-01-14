@@ -11,10 +11,11 @@ export const saveOrder = (order) => {
   }
 };
 
-export const getOrders = () => {
+export const getOrders = async () => {
   try {
-    const data = require("./order.json");
-    return data;
+    const fs = require("fs");
+    const data = await fs.readFileSync("./dataService/order.json");
+    return JSON.parse(data);
   } catch (error) {
     console.log(error);
   }

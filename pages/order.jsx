@@ -113,7 +113,7 @@ order.Layout = MainLayout;
 export default order;
 
 export async function getServerSideProps() {
-  const orders = getOrders();
+  const orders = await getOrders();
   return {
     props: {
       orders,
