@@ -31,7 +31,7 @@ const checkout = () => {
   const handlePayment = (e) => {
     e.preventDefault();
     if (completed) {
-      fetch("http://localhost:3001/api/order", {
+      fetch("/api/order", {
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
