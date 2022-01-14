@@ -63,7 +63,7 @@ const order = ({ orders }) => {
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
-                {orders.map((item) => (
+                {orders?.map((item) => (
                   <tr key={item.userId}>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span>{item.name}</span>
@@ -81,7 +81,7 @@ const order = ({ orders }) => {
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span className="text-sm text-gray-900">
                         <ul>
-                          {item.cart.map((itemCart) => (
+                          {item.cart?.map((itemCart) => (
                             <li
                               key={itemCart.product.id}
                             >{`${itemCart.product.name} x ${itemCart.qty}`}</li>
